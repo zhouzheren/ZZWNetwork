@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "NSArray+Log.h"
+#import "NSDictionary+Log.h"
+#import "ZZWNetworkManager.h"
 
 FOUNDATION_EXPORT double ZZWNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZZWNetworkVersionString[];

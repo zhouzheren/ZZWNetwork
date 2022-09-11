@@ -1,22 +1,28 @@
 {
   "name": "ZZWNetwork",
   "version": "0.1.0",
-  "summary": "A short description of ZZWNetwork.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/a595429717@163.com/ZZWNetwork",
+  "summary": "网络库",
+  "description": "基于AFNetWorking和苹果自带的网络框架封装的网络库",
+  "homepage": "https://github.com/zhouzheren/ZZWNetwork",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "a595429717@163.com": "a595429717@163.com"
+    "snail": "a595429717@163.com"
   },
   "source": {
-    "git": "https://github.com/a595429717@163.com/ZZWNetwork.git",
+    "git": "https://github.com/zhouzheren/ZZWNetwork.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "9.0"
   },
-  "source_files": "ZZWNetwork/Classes/**/*"
+  "source_files": "ZZWNetwork/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "dependencies": {
+    "AFNetworking": [
+      "~> 4.0.1"
+    ]
+  }
 }

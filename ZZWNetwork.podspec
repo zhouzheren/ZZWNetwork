@@ -9,34 +9,20 @@
 Pod::Spec.new do |s|
   s.name             = 'ZZWNetwork'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ZZWNetwork.'
+  s.summary          = '网络库'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = '基于AFNetWorking和苹果自带的网络框架封装的网络库' #库的详细描述
 
-  s.homepage         = 'https://github.com/a595429717@163.com/ZZWNetwork'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+
+  s.homepage         = 'https://github.com/zhouzheren/ZZWNetwork'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'a595429717@163.com' => 'a595429717@163.com' }
-  s.source           = { :git => 'https://github.com/a595429717@163.com/ZZWNetwork.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'snail' => 'a595429717@163.com' } #作者名字、邮箱
+  s.source           = { :git => 'https://github.com/zhouzheren/ZZWNetwork.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'ZZWNetwork/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ZZWNetwork' => ['ZZWNetwork/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/**/*.h' #公开的头文件，如果没有公开，用户在用的时候可能引不到响应的头文件
+  s.dependency 'AFNetworking', '~> 4.0.1' #需要依赖的三方库
 end
