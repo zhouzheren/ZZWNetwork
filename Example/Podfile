@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'ZZWNetwork_Example' do
+  pod 'ZZWNetwork', :path => '../'
+
+  target 'ZZWNetwork_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
