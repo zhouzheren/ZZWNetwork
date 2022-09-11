@@ -13,6 +13,7 @@
 #import "NSArray+Log.h"
 #import "NSDictionary+Log.h"
 #import "ZZWNetworkManager.h"
+#import "ZZWNetworkModel.h"
 
 FOUNDATION_EXPORT double ZZWNetworkVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZZWNetworkVersionString[];

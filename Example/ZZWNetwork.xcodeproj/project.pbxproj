@@ -38,8 +38,8 @@
 
 /* Begin PBXFileReference section */
 		0788A8DFF3FCD2808D932C7F /* Pods-ZZWNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZWNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZZWNetwork_Tests/Pods-ZZWNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1216CB73B6302D036C76DEE3 /* ZZWNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZZWNetwork.podspec; path = ../ZZWNetwork.podspec; sourceTree = "<group>"; };
-		15308ED440440EEA8F728F28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1216CB73B6302D036C76DEE3 /* ZZWNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZZWNetwork.podspec; path = ../ZZWNetwork.podspec; sourceTree = "<group>"; };
+		15308ED440440EEA8F728F28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		534264A93226A790FF3C8B49 /* Pods_ZZWNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZWNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD0E7C82F636062311C7402 /* Pods-ZZWNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZWNetwork_Example.release.xcconfig"; path = "Target Support Files/Pods-ZZWNetwork_Example/Pods-ZZWNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZZWNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZWNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BA66E5DFDEC81C2E2624CE4 /* Pods-ZZWNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZWNetwork_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZZWNetwork_Example/Pods-ZZWNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		92252B0A5202C552F0B6B2BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		92252B0A5202C552F0B6B2BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A5FE08F9907B9A29351189B7 /* Pods-ZZWNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZWNetwork_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZZWNetwork_Tests/Pods-ZZWNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6AFEA348632BF830667D98B /* Pods_ZZWNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZWNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,7 +193,6 @@
 				A5FE08F9907B9A29351189B7 /* Pods-ZZWNetwork_Tests.debug.xcconfig */,
 				0788A8DFF3FCD2808D932C7F /* Pods-ZZWNetwork_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

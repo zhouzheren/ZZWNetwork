@@ -8,6 +8,7 @@
 
 #import "ZZWNetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
+#import "ZZWNetworkModel.h"
 #import "NSArray+Log.h"
 #import "NSDictionary+Log.h"
 
@@ -18,9 +19,7 @@ NSString * const NetworkErrorReason = @"reason";
 @property (nonatomic,strong) AFHTTPSessionManager *manager;
 @property (nonatomic,strong) AFNetworkReachabilityManager *networkManager;
 @end
-@implementation NetworkModel
 
-@end
 @implementation ZZWNetworkManager
 + (instancetype)shareManager {
     
@@ -74,12 +73,12 @@ NSString * const NetworkErrorReason = @"reason";
 -(void)setHead:(NSString *)head withValue:(NSString *)value{
     [self.manager.requestSerializer setValue:value forHTTPHeaderField:head];
 }
-- (void)getWithParametersModel:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+- (void)getWithParametersModel:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
     
-    NSString *urlStr = [model.ipString stringByAppendingFormat:@"%@",model.cmd];//拼接url字符串
     NSDate *startRequestDate = [NSDate date];
     [self showNetworkActivityVisible:YES];
     
+    NSString *urlStr = [model getUrlString];
     [self.manager GET:urlStr parameters:model.paramterDic headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:startRequestDate];
             NSLog(@"\n开始时间:%@\n请求URL:%@\n请求方式:%@\n请求头信息:%@\n请求体信息:%@\n请求响应时间:%@\n",[self getChineseTimeWithDate:startRequestDate],task.originalRequest.URL,task.originalRequest.HTTPMethod,task.originalRequest.allHTTPHeaderFields,[[NSString alloc] initWithData:task.originalRequest.HTTPBody encoding:NSUTF8StringEncoding],@(time));
@@ -113,7 +112,7 @@ NSString * const NetworkErrorReason = @"reason";
     }];
     
 }
-- (void)postWithJsonParametersModel:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+- (void)postWithJsonParametersModel:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
     NSString *urlStr = [model.ipString stringByAppendingString:model.cmd];//拼接url字符串
        [self showNetworkActivityVisible:YES];
        NSDate *startRequestDate = [NSDate date];
@@ -199,7 +198,7 @@ NSString * const NetworkErrorReason = @"reason";
 //    }];
 }
 
-- (void)PostWithParametersModel:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+- (void)PostWithParametersModel:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
 
     NSString *urlStr = [model.ipString stringByAppendingString:model.cmd];//拼接url字符串
     [self showNetworkActivityVisible:YES];
@@ -247,7 +246,7 @@ NSString * const NetworkErrorReason = @"reason";
     }];
 }
 
--(void)downloadWithParametersModel:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+-(void)downloadWithParametersModel:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
     [self showNetworkActivityVisible:YES];
     
     NSURL *url = [NSURL URLWithString:model.paramterDic[@"downloadUrl"]];
@@ -268,7 +267,7 @@ NSString * const NetworkErrorReason = @"reason";
     [downloadTask resume];
 }
 
--(void)uploadDatas:(NSArray *)datas mineTypes:(NSArray *)types names:(NSArray *)names model:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+-(void)uploadDatas:(NSArray *)datas mineTypes:(NSArray *)types names:(NSArray *)names model:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
     NSString *urlStr = [model.ipString stringByAppendingString:model.cmd];//拼接url字符串
     [self showNetworkActivityVisible:YES];
     NSDate *startRequestDate = [NSDate date];
@@ -316,7 +315,7 @@ NSString * const NetworkErrorReason = @"reason";
         }
     }];
 }
--(void)uploadData:(NSData*)data mineType:(NSString *)mineType model:(NetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
+-(void)uploadData:(NSData*)data mineType:(NSString *)mineType model:(ZZWNetworkModel *)model completion:(void (^)(NetworkResult result, id  _Nullable responseObject))completion{
     NSString *urlStr = [model.ipString stringByAppendingString:model.cmd];//拼接url字符串
     [self showNetworkActivityVisible:YES];
     [self.manager POST:urlStr parameters:model.paramterDic headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
