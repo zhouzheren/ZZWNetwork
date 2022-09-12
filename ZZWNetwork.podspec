@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'ZZWNetwork/Classes/**/*'
-  s.public_header_files = 'Pod/Classes/**/*.h' #公开的头文件，如果没有公开，用户在用的时候可能引不到响应的头文件
+  #s.public_header_files = 'Pod/Classes/**/*.h' #公开的头文件，如果没有公开，用户在用的时候可能引不到响应的头文件
   s.dependency 'AFNetworking', '~> 4.0.1' #需要依赖的三方库
 end
